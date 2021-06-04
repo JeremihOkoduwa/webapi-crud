@@ -7693,11 +7693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\PaymentAPI\\PaymentAPI.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\payment\\PaymentAPI\\PaymentAPI.csproj",
       "projectName": "PaymentAPI",
-      "projectPath": "C:\\Users\\User\\Desktop\\PaymentAPI\\PaymentAPI.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\payment\\PaymentAPI\\PaymentAPI.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\PaymentAPI\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\payment\\PaymentAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
