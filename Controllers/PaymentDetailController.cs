@@ -27,6 +27,8 @@ namespace PaymentAPI.Controllers
             return await _context.PaymentDetails.ToListAsync();
         }
 
+
+
         // GET: api/PaymentDetail/5
         [HttpGet("{id}")]
         public async Task<ActionResult<PaymentDetail>> GetPaymentDetail(int id)
@@ -82,6 +84,22 @@ namespace PaymentAPI.Controllers
 
             return CreatedAtAction("GetPaymentDetail", new { id = paymentDetail.PaymentDetailId }, paymentDetail);
         }
+        static List<PaymentDetail> paymentDetail = new List<PaymentDetail>()
+        {
+            new PaymentDetail() {PaymentDetailId = 2, CardOwnerName = "Frank Road", CardNumber = "05963749604826859", ExpirationDate = "03/19", SecurityCode = "435"},
+            new PaymentDetail() {PaymentDetailId = 3, CardOwnerName = "James Gum", CardNumber = "749609890097859", ExpirationDate = "03/20", SecurityCode = "989" },
+            new PaymentDetail() {PaymentDetailId = 4, CardOwnerName  = "Frank Road", CardNumber = "960482685999987689", ExpirationDate = "03/22", SecurityCode = "678" }
+        };
+
+        [Route("detail/{id}")]
+        [HttpGet]
+        public IEnumerable<PaymentDetail> Get(int id)
+        {
+            yield return paymentDetail.FirstOrDefault(p => p.PaymentDetailId == id);
+        }
+
+
+
 
         // DELETE: api/PaymentDetail/5
         [HttpDelete("{id}")]
@@ -98,6 +116,8 @@ namespace PaymentAPI.Controllers
 
             return NoContent();
         }
+
+
 
         private bool PaymentDetailExists(int id)
         {
