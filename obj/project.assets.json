@@ -7688,19 +7688,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\JEREMIAH\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\payment\\PaymentAPI\\PaymentAPI.csproj",
+      "projectUniqueName": "C:\\Users\\JEREMIAH\\source\\repos\\new folder\\webapi-crud\\PaymentAPI.csproj",
       "projectName": "PaymentAPI",
-      "projectPath": "C:\\Users\\User\\Desktop\\payment\\PaymentAPI\\PaymentAPI.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\payment\\PaymentAPI\\obj\\",
+      "projectPath": "C:\\Users\\JEREMIAH\\source\\repos\\new folder\\webapi-crud\\PaymentAPI.csproj",
+      "packagesPath": "C:\\Users\\JEREMIAH\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JEREMIAH\\source\\repos\\new folder\\webapi-crud\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JEREMIAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7708,7 +7712,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/COURE/_packaging/coure-feed/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
