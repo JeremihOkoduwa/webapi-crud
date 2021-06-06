@@ -84,6 +84,36 @@ namespace PaymentAPI.Controllers
 
             return CreatedAtAction("GetPaymentDetail", new { id = paymentDetail.PaymentDetailId }, paymentDetail);
         }
+        [Route("[action]")]
+        [HttpPost]
+        public async Task<ActionResult<PaymentDetail>> PostlistPaymentDetail(List<PaymentDetail> paymentDetail)
+        {
+            try
+            {
+                foreach (var item in paymentDetail)
+                {
+                    if (string.IsNullOrEmpty(item.CardOwnerName))
+                    {
+                        return BadRequest("Card owner name is null or empty");
+                    }
+                    if (PaymentDetailExist(item.CardOwnerName))
+                    {
+                        return BadRequest($"A model exist with this name - {item.CardOwnerName}");
+                    }
+                    await _context.PaymentDetails.AddAsync(item);
+                    await _context.SaveChangesAsync();
+                }
+                return Ok("List succesfully inserted");
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(500, "An internal server error occured please contact system admin");
+            }
+
+
+
+        }
         static List<PaymentDetail> paymentDetail = new List<PaymentDetail>()
         {
             new PaymentDetail() {PaymentDetailId = 2, CardOwnerName = "Frank Road", CardNumber = "05963749604826859", ExpirationDate = "03/19", SecurityCode = "435"},
@@ -122,6 +152,11 @@ namespace PaymentAPI.Controllers
         private bool PaymentDetailExists(int id)
         {
             return _context.PaymentDetails.Any(e => e.PaymentDetailId == id);
+        }
+
+        private bool PaymentDetailExist(string ownername)
+        {
+            return _context.PaymentDetails.Any(e => e.CardOwnerName == ownername);
         }
     }
 }
